@@ -14,7 +14,7 @@ class MoviesController < ApplicationController
     sort = params[:sort]
     
     if sort == "title"
-      @title_header = "hilite" 
+      @table_header = "hilite" 
     elsif sort == "release_date"
       @release_date_header = "hilite" 
     else 
