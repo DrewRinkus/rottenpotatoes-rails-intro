@@ -12,15 +12,10 @@ class MoviesController < ApplicationController
 
   def index
     sort = params[:sort]
-    if sort == 'title'
-      @movies = Movie.reorder(:title)
-      @title_class = 'hilite'
-    elsif sort == 'release date' 
-      @movies = Movie.reorder(:release_date)
-      @release_date_class = 'hilite'
-    else
-      @movies = Movie.all
-    end
+    @title_header = 'hilite' if sort == 'title'
+    @release_date_header = 'hilite' if sort == 'release_date' 
+    
+    @movies = Movie.order(sort)
   end
 
   def new
