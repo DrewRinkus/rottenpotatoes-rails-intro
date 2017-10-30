@@ -13,8 +13,8 @@ class MoviesController < ApplicationController
   def index
     sort = params[:sort]
     
-    @title_header = 'hilite' if sort == 'title'
-    @release_date_header = 'hilite' if sort == 'release_date' 
+    @title_header = "hilite" if sort == "title"
+    @release_date_header = "hilite" if sort == "release_date"
     
     @all_ratings = Movie.ratings
     @ratings = @all_ratings
