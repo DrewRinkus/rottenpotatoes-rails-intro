@@ -17,8 +17,9 @@ class MoviesController < ApplicationController
     @release_date_header = 'hilite' if sort == 'release_date' 
     
     @all_ratings = Movie.ratings
-    @all_ratings = params[:ratings].keys if params.keys.include? "ratings"
-    @movies = Movie.where(:rating => @all_ratings).order(sort)
+    @ratings = @all_ratings
+    @ratings = params[:ratings].keys if params.keys.include? "ratings"
+    @movies = Movie.where(:rating => @ratings).order(sort)
   end
 
   def new
