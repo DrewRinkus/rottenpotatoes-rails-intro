@@ -13,9 +13,9 @@ class MoviesController < ApplicationController
   def index
     sort = params[:sort] || session[:sort]
     
-    if sort =="title"
+    if sort == 'title'
       @title_header = 'hilite'
-    elsif sort =="release_date"
+    elsif sort == 'release_date'
       @release_date_header = 'hilite' 
     else 
       Movie.all
